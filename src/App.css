@@ -24,4 +24,17 @@
 .App [data-target="grid-2"] div:last-of-type {
   font-weight: bolder;
   font-size: .8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+}
+.App [data-target="grid-2"] div:last-of-type input {
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-weight: bold;
 }
