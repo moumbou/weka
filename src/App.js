@@ -7,7 +7,7 @@ function App() {
   const [textArea, setTextArea] = useState("");
   const [nom, setNom] = useState("");
   const [prenom, setPreom] = useState("");
-  const [age, setAge] = useState();
+  const [temperature, setTemperature] = useState();
   const [result, setResult] = useState("");
 
   useEffect(() => {
@@ -29,14 +29,14 @@ function App() {
   };
 
   const validation = () => {
-    const number = Math.round(Math.random());
-    console.log(number);
     if (textArea.length)
-      if (!age || !nom || !prenom)
+      if (!temperature || !nom || !prenom)
         return setResult(`veillez entrez toutes les informations !`);
       else
         return setResult(
-          `la maladie de "${nom} ${prenom}" est de type ${!number ? "a" : "b"}`
+          `le(a) patient(e) "${nom} ${prenom}" est atteint(e) d'une inflamation ${
+            temperature >= 40 ? "aiguë prolongée" : "aiguë"
+          }`
         );
   };
 
@@ -72,9 +72,9 @@ function App() {
           />
           <input
             type="number"
-            value={age}
-            onChange={(e) => setAge(e.target.value)}
-            placeholder="age"
+            value={temperature}
+            onChange={(e) => setTemperature(e.target.value)}
+            placeholder="temperature"
           />
           <button type="button" onClick={validation}>
             valider
